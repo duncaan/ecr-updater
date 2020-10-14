@@ -16,9 +16,10 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.CR_PAT }}
       -
-        name: Push to GitHub Packages
-        uses: docker/build-push-action@v1
+        name: Push to GitHub Container Registry
+        uses: docker/build-push-action@v2
         with:
-          registry: ghcr.io
-          repository: duncaan/ecr-updater
-          tag_with_ref: true
+          tags: ghcr.io/duncaan/ecr-updater:latest
+          push: true
+          secrets: |
+            GIT_AUTH_TOKEN=${{ secrets.CR_PAT }}
