@@ -6,7 +6,7 @@ import base64
 import boto3
 from kubernetes import client as k8sclient
 from kubernetes.client import Configuration, ApiClient
-#from prometheus_client import start_http_server, Summary
+from prometheus_client import start_http_server, Summary
 
 
 def exception_handler(exception_type, exception, traceback):
@@ -149,7 +149,7 @@ def update_ecr():
 
 
 if __name__ == '__main__':
-    #start_http_server(8000, "0.0.0.0")
+    start_http_server(8000, "0.0.0.0")
     while True:
         print('Running update loop')
         create_pull_secrets()
