@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 boto3 = "*"
 kubernetes = "==3.0.*"
+#prometheus_client = "*"
 
 [requires]
 python_version = "3.6"
